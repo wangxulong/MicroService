@@ -58,20 +58,54 @@
 
     </LinearLayout>
     <LinearLayout
-        android:id="@+id/bottom_tab_three"
+        android:id="@+id/require"
+        android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
         >
         <TextView
-            android:id="@+id/bottom_text_three"
+            android:id="@+id/require_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icon_require"
+            android:textColor="#009300"
+            android:textSize="30dp"/>
+        <TextView
+            android:id="@+id/require_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textColor="#009300"
-            android:text="客户端"
+            android:text="需求"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/my"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/my_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icon_my"
+            android:textColor="#009300"
+            android:textSize="30dp"/>
+        <TextView
+            android:id="@+id/my_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="#009300"
+            android:text="我的"
             />
 
     </LinearLayout>
