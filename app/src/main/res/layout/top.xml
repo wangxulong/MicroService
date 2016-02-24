@@ -1,12 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="40dp">
-    <TextView
-        android:textSize="25sp"
-        android:text="SHU-SERVICE"
-        android:gravity="center"
-        android:background="#009300"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_gravity="center"
+    android:background="@color/colorWhite"
+    >
+
+          <TextView
+              android:id="@+id/app_icon"
+              android:layout_marginLeft="5dp"
+              android:layout_width="40dp"
+              android:textSize="30sp"
+              android:gravity="center"
+              android:layout_height="match_parent"
+              android:textColor="@color/colorMain"
+              android:text="@string/icon_app"
+              />
+        <RelativeLayout
+            android:layout_weight="4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_margin="5dp"
+                android:id="@+id/main_search"
+                android:layout_weight="4"
+                android:editable="false"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:textSize="18sp"
+                android:layout_height="match_parent"
+                android:textColorHint="@color/colorHint"
+                android:gravity="center_vertical"
+                android:hint="  请输入搜索内容"
+                android:background="@drawable/home_search_border"
+                />
+
+        </RelativeLayout>
+
 </LinearLayout>
