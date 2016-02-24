@@ -18,6 +18,10 @@
         <!--搜索界面-->
         <activity android:name=".activity.SearchActivity" />
         <activity android:name=".myActivity.MySettingActivity" />
+        <activity android:name=".myActivity.MyRequestActivity" />
+        <activity android:name=".myActivity.MyReviewActivity" />
+        <activity android:name=".myActivity.MyQuestionActivity" />
+        <activity android:name=".myActivity.MyServerActivity" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

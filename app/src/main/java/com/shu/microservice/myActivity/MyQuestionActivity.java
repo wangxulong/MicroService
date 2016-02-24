@@ -9,13 +9,13 @@ import com.shu.microservice.R;
 /**
  * Created by Administrator on 2016/2/24 0024.
  */
-public class MySettingActivity extends AppCompatActivity {
+public class MyQuestionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.my_setting);
-        TextView tv1= (TextView) findViewById(R.id.setting);
-        tv1.setText("this is test!,my setting");
+        setContentView(R.layout.my_question);
+        TextView tv1= (TextView) findViewById(R.id.question);
+        tv1.setText("this is test!,my question");
     }
 
 }
