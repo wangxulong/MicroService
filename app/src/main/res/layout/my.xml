@@ -27,13 +27,46 @@
             <!--android:text="我的需求"-->
             <!--android:textSize="17sp"-->
             <!--android:textColor="#000" />-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/touxiang"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:paddingLeft="10dp" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:layout_marginLeft="49dp"
             android:layout_marginStart="150dp">
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/zhanghao"
+                android:textSize="17sp"
+                android:textColor="#000"
+                android:id="@+id/textView"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_alignLeft="@+id/textView2"
+                android:layout_alignStart="@+id/textView2" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nick_name"
+                android:textSize="17sp"
+                android:textColor="#000"
+                android:id="@+id/textView2"
+                android:layout_marginLeft="41dp"
+                android:layout_below="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="41dp" />
         </RelativeLayout>
 
     </RelativeLayout>
@@ -45,6 +78,7 @@
         android:clickable="true"
         android:background="#ffffff">
         <TextView
+            android:id="@+id/my_request"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
@@ -68,6 +102,7 @@
         android:clickable="true"
         android:background="#ffffff">
         <TextView
+            android:id="@+id/my_server"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
@@ -85,6 +120,7 @@
         android:clickable="true"
         android:background="#ffffff">
         <TextView
+            android:id="@+id/my_review"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
@@ -102,6 +138,7 @@
         android:clickable="true"
         android:background="#ffffff">
         <TextView
+            android:id="@+id/my_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
@@ -116,9 +153,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:gravity="center_vertical"
-        android:clickable="true"
         android:background="#ffffff">
         <TextView
+            android:id="@+id/my_setting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"

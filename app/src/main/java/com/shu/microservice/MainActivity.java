@@ -26,6 +26,7 @@ import com.shu.microservice.activity.QuestionFragment;
 import com.shu.microservice.activity.RequireFragment;
 import com.shu.microservice.activity.SearchActivity;
 import com.shu.microservice.activity.ServiceFragment;
+import com.shu.microservice.myActivity.MySettingActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -239,6 +240,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
     }
-
 
 }

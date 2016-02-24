@@ -2,10 +2,12 @@
     <string name="app_name">MicroService</string>
     <string name="icon_app">&#xe606;</string>
     <string name="icon_home">&#xe620;</string>
-    <string name="icon_question">&#xe621;</string>
+    <string name="icon_question">&#xe692;</string>
     <string name="icon_service">&#xe60e;</string>
     <string name="icon_require">&#xe612;</string>
     <string name="icon_my">&#xe6b6;</string>
     <string name="icon_search">&#xe612;</string>
     <string name="icon_clear">&#xe64d;</string>
+    <string name="zhanghao">账号：15201895065</string>
+    <string name="nick_name">昵称：Yage</string>
 </resources>
