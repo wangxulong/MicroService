@@ -8,6 +8,13 @@
     <string name="icon_my">&#xe6b6;</string>
     <string name="icon_search">&#xe612;</string>
     <string name="icon_clear">&#xe64d;</string>
+
+
+    <string name="hot_service">热点服务</string>
+
+
+
+
     <string name="zhanghao">账号：15201895065</string>
     <string name="nick_name">昵称：Yage</string>
 </resources>

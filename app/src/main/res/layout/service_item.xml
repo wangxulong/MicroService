@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_alignParentLeft="true"
+        android:id="@+id/pic"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@mipmap/ic_launcher"
+        />
+    <TextView
+        android:id="@+id/title"
+        android:layout_toRightOf="@id/pic"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="28sp"
+        android:text="title"
+        />
+
+    <TextView
+        android:layout_toRightOf="@id/pic"
+        android:id="@+id/author"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:layout_below="@id/title"
+        android:text="作者"
+        />
+    <TextView
+        android:id="@+id/createTime"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_below="@id/title"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:text="2016-10-10 22:12"
+        />
+</RelativeLayout>
