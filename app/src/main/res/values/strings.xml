@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">MicroService</string>
     <string name="icon_home">&#xe620;</string>
+    <string name="icon_question">&#xe621;</string>
     <string name="icon_service">&#xe60e;</string>
     <string name="icon_require">&#xe612;</string>
     <string name="icon_my">&#xe6b6;</string>

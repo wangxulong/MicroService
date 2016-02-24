@@ -25,10 +25,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="20dp"
+            android:textSize="@dimen/bottom_font_size"
             android:textColor="#000000"
             android:text="首页"
-            />
+            android:layout_marginTop="-5dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/question"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/questiion_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/icon_question"
+            android:textColor="#009300"
+            android:textSize="30dp"/>
+        <TextView
+            android:id="@+id/question_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/bottom_font_size"
+            android:textColor="#009300"
+            android:text="问答"
+            android:layout_marginTop="-5dp" />
 
     </LinearLayout>
     <LinearLayout
@@ -51,10 +77,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="20dp"
+            android:textSize="@dimen/bottom_font_size"
             android:textColor="#009300"
             android:text="服务"
-            />
+            android:layout_marginTop="-5dp" />
 
     </LinearLayout>
     <LinearLayout
@@ -77,10 +103,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="20dp"
+            android:textSize="@dimen/bottom_font_size"
             android:textColor="#009300"
             android:text="需求"
-            />
+            android:layout_marginTop="-5dp" />
 
     </LinearLayout>
     <LinearLayout
@@ -103,10 +129,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="20dp"
+            android:textSize="@dimen/bottom_font_size"
             android:textColor="#009300"
             android:text="我的"
-            />
+            android:layout_marginTop="-5dp" />
 
     </LinearLayout>
 </LinearLayout>

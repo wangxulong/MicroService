@@ -20,6 +20,7 @@ import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.shu.microservice.activity.HomeFragment;
 import com.shu.microservice.activity.MyFragment;
+import com.shu.microservice.activity.QuestionFragment;
 import com.shu.microservice.activity.RequireFragment;
 import com.shu.microservice.activity.ServiceFragment;
 
@@ -28,16 +29,19 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView homeIcon;
+    private TextView questionIcon;
     private TextView serviceIcon;
     private TextView requireIcon;
     private TextView myIcon;
 
     private TextView homeText;
+    private TextView questionText;
     private TextView serviceText;
     private TextView requireText;
     private TextView myText;
 
     private LinearLayout homeTab;
+    private LinearLayout questionTab;
     private LinearLayout serviceTab;
     private LinearLayout requireTab;
     private LinearLayout myTab;
@@ -64,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private void initEvents() {
         homeTab.setOnClickListener(this);
+        questionTab.setOnClickListener(this);
         serviceTab.setOnClickListener(this);
         requireTab.setOnClickListener(this);
         myTab.setOnClickListener(this);
@@ -91,16 +96,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initView() {
         //iconTextView
         homeIcon = (TextView) findViewById(R.id.home_icon);
+        questionIcon =(TextView) findViewById(R.id.questiion_icon);
         serviceIcon = (TextView) findViewById(R.id.service_icon);
         requireIcon = (TextView) findViewById(R.id.require_icon);
         myIcon = (TextView) findViewById(R.id.my_icon);
         //text
         homeText = (TextView) findViewById(R.id.home_text);
+        questionText = (TextView) findViewById(R.id.question_text);
         serviceText = (TextView) findViewById(R.id.service_text);
         requireText = (TextView) findViewById(R.id.require_text);
         myText = (TextView) findViewById(R.id.my_text);
         //layout
         homeTab = (LinearLayout) findViewById(R.id.home);
+        questionTab = (LinearLayout) findViewById(R.id.question);
         serviceTab = (LinearLayout) findViewById(R.id.service);
         requireTab = (LinearLayout) findViewById(R.id.require);
         myTab = (LinearLayout) findViewById(R.id.my);
@@ -110,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //fragments
         fragments = new ArrayList<>();
         fragments.add(new HomeFragment());
+        fragments.add(new QuestionFragment());
         fragments.add(new ServiceFragment());
         fragments.add(new RequireFragment());
         fragments.add(new MyFragment());
@@ -133,6 +142,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initIcons() {
         Typeface iconfont = Typeface.createFromAsset(getAssets(), "iconfonts/iconfont.ttf");
         homeIcon.setTypeface(iconfont);
+        questionIcon.setTypeface(iconfont);
         serviceIcon.setTypeface(iconfont);
         requireIcon.setTypeface(iconfont);
         myIcon.setTypeface(iconfont);
@@ -141,11 +151,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void resetIcons(){
         int defaultColor=  Color.parseColor("#000000");
         homeIcon.setTextColor(defaultColor);
+        questionIcon.setTextColor(defaultColor);
         serviceIcon.setTextColor(defaultColor);
         myIcon.setTextColor(defaultColor);
         requireIcon.setTextColor(defaultColor);
 
         homeText.setTextColor(defaultColor);
+        questionText.setTextColor(defaultColor);
         serviceText.setTextColor(defaultColor);
         requireText.setTextColor(defaultColor);
         myText.setTextColor(defaultColor);
@@ -161,14 +173,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.home:
                  setTab(0);
                  break;
+            case R.id.question:
+                 setTab(1);
+                 break;
             case R.id.service:
-                setTab(1);
+                setTab(2);
                  break;
             case R.id.require:
-                setTab(2);
+                setTab(3);
                 break;
             case R.id.my:
-                setTab(3);
+                setTab(4);
                 break;
 
         }
@@ -184,14 +199,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 homeText.setTextColor(selectedColor);
                 break;
             case 1:
+                questionIcon.setTextColor(selectedColor);
+                questionText.setTextColor(selectedColor);
+                break;
+            case 2:
                 serviceIcon.setTextColor(selectedColor);
                 serviceText.setTextColor(selectedColor);
                 break;
-            case 2:
+            case 3:
                 requireIcon.setTextColor(selectedColor);
                 requireText.setTextColor(selectedColor);
                 break;
-            case 3:
+            case 4:
                 myIcon.setTextColor(selectedColor);
                 myText.setTextColor(selectedColor);
                 break;
