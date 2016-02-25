@@ -1,168 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:weightSum="1"
-    android:background="#efebeb">
+    android:layout_height="wrap_content" >
 
-<!--<TextView-->
-    <!--android:text="my"-->
-    <!--android:gravity="center"-->
-    <!--android:textColor="#F00"-->
-    <!--android:textSize="20sp"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="20dp" />-->
-    <RelativeLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginTop="14dp"
-        android:gravity="center_vertical"
-        android:clickable="true"
-        android:background="#ffffff">
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:padding="8dp"-->
-            <!--android:text="我的需求"-->
-            <!--android:textSize="17sp"-->
-            <!--android:textColor="#000" />-->
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:src="@drawable/touxiang"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:paddingLeft="10dp" />
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:background="#efebeb">
 
+    <!--<TextView-->
+        <!--android:text="my"-->
+        <!--android:gravity="center"-->
+        <!--android:textColor="#F00"-->
+        <!--android:textSize="20sp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="20dp" />-->
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="14dp"
             android:gravity="center_vertical"
-            android:layout_marginLeft="49dp"
-            android:layout_marginStart="150dp">
-            <TextView
+            android:clickable="true"
+            android:background="#ffffff">
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:padding="8dp"-->
+                <!--android:text="我的需求"-->
+                <!--android:textSize="17sp"-->
+                <!--android:textColor="#000" />-->
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/zhanghao"
-                android:textSize="17sp"
-                android:textColor="#000"
-                android:id="@+id/textView"
-                android:layout_centerVertical="true"
-                android:layout_marginBottom="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_alignLeft="@+id/textView2"
-                android:layout_alignStart="@+id/textView2" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/nick_name"
-                android:textSize="17sp"
-                android:textColor="#000"
-                android:id="@+id/textView2"
-                android:layout_marginLeft="41dp"
-                android:layout_below="@+id/textView"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="41dp" />
+                android:src="@drawable/touxiang"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:paddingLeft="10dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="49dp"
+                android:layout_marginStart="150dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/zhanghao"
+                    android:textSize="17sp"
+                    android:textColor="#000"
+                    android:id="@+id/textView"
+                    android:layout_centerVertical="true"
+                    android:layout_alignLeft="@+id/textView2"
+                    android:layout_alignStart="@+id/textView2"
+                    android:layout_marginBottom="5dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nick_name"
+                    android:textSize="17sp"
+                    android:textColor="#000"
+                    android:id="@+id/textView2"
+                    android:layout_below="@+id/textView"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="15dp" />
+            </RelativeLayout>
+
         </RelativeLayout>
-
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:gravity="center_vertical"
-        android:clickable="true"
-        android:background="#ffffff">
-        <TextView
+        <RelativeLayout
             android:id="@+id/my_request"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="我的需求"
-            android:textSize="17sp"
-            android:textColor="#000"
-            android:layout_marginLeft="10dp" />
-        <!--<ImageView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:scaleType="matrix"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:layout_alignParentRight="true"-->
-             <!--/>-->
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:gravity="center_vertical"
-        android:clickable="true"
-        android:background="#ffffff">
-        <TextView
+            android:layout_marginTop="30dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:background="#ffffff">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="我的需求"
+                android:textSize="17sp"
+                android:textColor="#000"
+                android:layout_marginLeft="10dp" />
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:scaleType="matrix"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_alignParentRight="true"-->
+                 <!--/>-->
+        </RelativeLayout>
+        <RelativeLayout
             android:id="@+id/my_server"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="我的服务"
-            android:textSize="17sp"
-            android:textColor="#000"
-            android:layout_marginLeft="10dp" />
+            android:layout_marginTop="30dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:background="#ffffff">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="我的服务"
+                android:textSize="17sp"
+                android:textColor="#000"
+                android:layout_marginLeft="10dp" />
 
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:gravity="center_vertical"
-        android:clickable="true"
-        android:background="#ffffff">
-        <TextView
+        </RelativeLayout>
+        <RelativeLayout
             android:id="@+id/my_review"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="我的评论"
-            android:textSize="17sp"
-            android:textColor="#000"
-            android:layout_marginLeft="10dp" />
+            android:layout_marginTop="30dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:background="#ffffff">
+            <TextView
 
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:gravity="center_vertical"
-        android:clickable="true"
-        android:background="#ffffff">
-        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="我的评论"
+                android:textSize="17sp"
+                android:textColor="#000"
+                android:layout_marginLeft="10dp" />
+
+        </RelativeLayout>
+        <RelativeLayout
             android:id="@+id/my_question"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="我的问答"
-            android:textSize="17sp"
-            android:textColor="#000"
-            android:layout_marginLeft="10dp" />
+            android:layout_marginTop="30dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:background="#ffffff">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="我的问答"
+                android:textSize="17sp"
+                android:textColor="#000"
+                android:layout_marginLeft="10dp" />
 
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:gravity="center_vertical"
-        android:background="#ffffff">
-        <TextView
+        </RelativeLayout>
+        <RelativeLayout
             android:id="@+id/my_setting"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="个人设置"
-            android:textSize="17sp"
-            android:textColor="#000"
-            android:layout_marginLeft="10dp" />
+            android:layout_marginTop="30dp"
+            android:gravity="center_vertical"
+            android:background="#ffffff">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="个人设置"
+                android:textSize="17sp"
+                android:textColor="#000"
+                android:layout_marginLeft="10dp" />
 
-    </RelativeLayout>
-</LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

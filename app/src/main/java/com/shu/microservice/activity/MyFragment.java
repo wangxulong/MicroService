@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.shu.microservice.MainActivity;
@@ -23,11 +24,11 @@ import com.shu.microservice.myActivity.MySettingActivity;
  * Created by wxl on 2016/2/22.
  */
 public class MyFragment extends Fragment {
-    TextView textView_Request = null;
-    TextView textView_Server = null;
-    TextView textView_Review = null;
-    TextView textView_Question = null;
-    TextView textView_Setting = null;
+    RelativeLayout layout_Request = null;
+    RelativeLayout layout_Server = null;
+    RelativeLayout layout_Review = null;
+    RelativeLayout layout_Question = null;
+    RelativeLayout layout_Setting = null;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -40,8 +41,8 @@ public class MyFragment extends Fragment {
     public void onStart() {
         super.onStart();
         //响应 我的需求
-        textView_Request = (TextView) getActivity().findViewById(R.id.my_request);
-        textView_Request.setOnClickListener(new View.OnClickListener() {
+        layout_Request = (RelativeLayout) getActivity().findViewById(R.id.my_request);
+        layout_Request.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), MyRequestActivity.class);
@@ -49,8 +50,8 @@ public class MyFragment extends Fragment {
             }
         });
         //响应 我的服务
-        textView_Server = (TextView) getActivity().findViewById(R.id.my_server);
-        textView_Server.setOnClickListener(new View.OnClickListener() {
+        layout_Server = (RelativeLayout) getActivity().findViewById(R.id.my_server);
+        layout_Server.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), MyServerActivity.class);
@@ -58,8 +59,8 @@ public class MyFragment extends Fragment {
             }
         });
         //响应 我的评论
-        textView_Review = (TextView) getActivity().findViewById(R.id.my_review);
-        textView_Review.setOnClickListener(new View.OnClickListener() {
+        layout_Review = (RelativeLayout) getActivity().findViewById(R.id.my_review);
+        layout_Review.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), MyReviewActivity.class);
@@ -67,8 +68,8 @@ public class MyFragment extends Fragment {
             }
         });
         //响应 我的问答
-        textView_Question = (TextView) getActivity().findViewById(R.id.my_question);
-        textView_Question.setOnClickListener(new View.OnClickListener() {
+        layout_Question = (RelativeLayout) getActivity().findViewById(R.id.my_question);
+        layout_Question.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), MyQuestionActivity.class);
@@ -77,8 +78,8 @@ public class MyFragment extends Fragment {
         });
 
         //响应 个人设置
-        textView_Setting = (TextView) getActivity().findViewById(R.id.my_setting);
-        textView_Setting.setOnClickListener(new View.OnClickListener() {
+        layout_Setting = (RelativeLayout) getActivity().findViewById(R.id.my_setting);
+        layout_Setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), MySettingActivity.class);

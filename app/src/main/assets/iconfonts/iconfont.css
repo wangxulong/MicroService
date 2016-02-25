@@ -4,6 +4,7 @@
   src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
   url('iconfont.woff') format('woff'), /* chrome, firefox */
   url('iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('ques_iconfont.ttf') format('truetype'),
   url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
 }
 
@@ -16,7 +17,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 .icon-index:before { content: "\e620"; }
-.icon-question:before { content: "\e692"; }
+.icon-question:before { content: "\e648"; }
 .icon-fuwu:before { content: "\e60e"; }
 .icon-wo:before { content: "\e6b6"; }
 .icon-kehuxuqiu:before { content: "\e612"; }

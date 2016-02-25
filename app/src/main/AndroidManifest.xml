@@ -17,6 +17,7 @@
         </activity>
         <!--搜索界面-->
         <activity android:name=".activity.SearchActivity" />
+        <!--我的二级页面-->
         <activity android:name=".myActivity.MySettingActivity" />
         <activity android:name=".myActivity.MyRequestActivity" />
         <activity android:name=".myActivity.MyReviewActivity" />
