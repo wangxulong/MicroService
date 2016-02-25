@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="80dp">
     <ImageView
         android:layout_alignParentLeft="true"
         android:id="@+id/pic"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:src="@mipmap/ic_launcher"
+
         />
     <TextView
         android:id="@+id/title"
@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:textSize="28sp"
-        android:text="title"
+        android:textColor="@color/colorBlack"
         />
 
     <TextView
@@ -25,6 +25,7 @@
         android:layout_height="30dp"
         android:gravity="center"
         android:textSize="16sp"
+        android:textColor="@color/colorSmallFont"
         android:layout_below="@id/title"
         android:text="作者"
         />
@@ -33,6 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:textSize="16sp"
+        android:textColor="@color/colorSmallFont"
         android:gravity="center"
         android:layout_below="@id/title"
         android:layout_alignParentRight="true"

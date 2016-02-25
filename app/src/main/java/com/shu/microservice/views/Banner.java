@@ -1,9 +1,11 @@
 package com.shu.microservice.views;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.PointF;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
@@ -84,6 +86,7 @@ public class Banner extends LinearLayout implements Runnable {
         }
         InitBannerView();
     }
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     private void InitBannerView() {
         viewPager = new ViewPager(getContext());
         viewDots = new LinearLayout(getContext());
