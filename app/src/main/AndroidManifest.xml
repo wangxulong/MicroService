@@ -24,6 +24,7 @@
         <activity android:name=".myActivity.MyReviewActivity" />
         <activity android:name=".myActivity.MyQuestionActivity" />
         <activity android:name=".myActivity.MyServerActivity" />
+        <activity android:name=".activity.question.QuestionDetail" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
