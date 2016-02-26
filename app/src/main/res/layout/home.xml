@@ -1,14 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:daemon="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<TextView
+    android:layout_height="match_parent"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+     >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+        <com.shu.microservice.views.Banner
+            android:id="@+id/my_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            daemon:changeInterval="3000"
+            android:gravity="right|center_vertical"
+            daemon:dotsBackground="#99999999"
+            daemon:dotsBlurImage="@drawable/message_no_read"
+            daemon:dotsFocusImage="@drawable/message_read"
+            daemon:dotsSpacing="5dp"
+            daemon:dotsViewHeight="30dp" />
 
-    android:text="home"
-    android:gravity="center"
-    android:textColor="#F00"
-    android:textSize="20sp"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
-</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:gravity="left|center_vertical"
+            android:textSize="18sp"
+            android:textColor="@color/colorMain"
+            android:text="@string/hot_service" />
+
+
+        <ListView
+            android:id="@+id/home_hot_service"
+            android:layout_width="match_parent"
+            android:layout_height="240dp">
+
+        </ListView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:gravity="left|center_vertical"
+            android:textSize="18sp"
+            android:textColor="@color/colorMain"
+            android:text="@string/hot_require" />
+
+        <ListView
+            android:id="@+id/home_hot_require"
+            android:layout_width="match_parent"
+            android:layout_height="240dp">
+
+        </ListView>
+    </LinearLayout>
+
+</ScrollView>
