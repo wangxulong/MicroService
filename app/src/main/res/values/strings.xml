@@ -15,7 +15,10 @@
 
 
 
-
-    <string name="zhanghao">账号：15201895065</string>
-    <string name="nick_name">昵称：Yage</string>
+    <!-- 个人信息方面-->
+    <string name="zhanghao">15201895065</string>
+    <string name="nick_name">Yage</string>
+    <string name="my_name">李昌亚</string>
+    <string name="my_email">1749362086@qq.com</string>
+    <string name="my_phone">13156525583</string>
 </resources>
