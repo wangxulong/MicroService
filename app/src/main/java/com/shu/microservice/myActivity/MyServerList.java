@@ -35,7 +35,7 @@ public class MyServerList extends BaseAdapter {
         for (int i = 0; i < 10; i++) {
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("img", R.drawable.server);
-            map.put("title", "       快速准确地翻译各种专业的方面的学术论文！                     2016-02-14");
+            map.put("title", "       快速准确地翻译各种专业的方面的学术论文！               2016-02-14");
             mData.add(map);
         }
         //这儿定义isSelected这个map是记录每个listitem的状态，初始状态全部为false。
