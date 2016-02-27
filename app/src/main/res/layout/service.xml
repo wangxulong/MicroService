@@ -1,12 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<linearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-<TextView
-    android:text="service"
-    android:gravity="center"
-    android:textColor="#F00"
-    android:textSize="20sp"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" />
-</LinearLayout>
+
+    <linearLayout android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <EditText
+        android:id="@+id/search"
+        android:layout_weight="4"
+        android:layout_width="1dp"
+        android:layout_height="fill_parent"
+        android:imeOptions="actionSearch"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/colorBlack"
+        android:textSize="17sp"
+        android:singleLine="true"
+        android:hint="搜索"
+        android:textColorHint="@color/colorHint"
+        android:gravity="center_vertical"
+        android:background="@null"/>
+    </linearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <textview
+            android:layout_weight="4"
+            android:layout_width="1dp"
+            android:text="类别"/>
+        <button
+            android:id="@+id/cloth"
+            android:layout_weight="4"
+            android:layout_width="1dp"
+            android:layout_marginleft="10dp"
+            android:text="衣"/>
+        <button
+        android:id="@+id/food"
+        android:layout_weight="4"
+        android:layout_width="1dp"
+        android:layout_marginleft="10dp"
+        android:text="食"/>
+       <button
+        android:id="@+id/live"
+        android:layout_weight="4"
+        android:layout_width="1dp"
+        android:layout_marginleft="10dp"
+        android:text="住"/>
+       <button
+        android:id="@+id/travel"
+        android:layout_weight="4"
+        android:layout_width="1dp"
+        android:layout_marginleft="10dp"
+        android:text="行"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <textview
+            android:layout_weight="4"
+            android:layout_width="1dp"
+            android:text="时间"/>
+        <button
+            android:id="@+id/ascend"
+            android:layout_weight="4"
+            android:layout_width="1dp"
+            android:layout_marginleft="10dp"
+            android:text="升序"/>
+        <button
+            android:id="@+id/descend"
+            android:layout_weight="4"
+            android:layout_width="1dp"
+            android:layout_marginleft="10dp"
+            android:text="降序"/>
+    </LinearLayout>
+
+    <linearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <edittext
+            android:id="@+id/etxt"
+            android:layout_weight="10"
+            android:layout_width="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="快速,准确地翻译英文论文....."/>
+        <edittext
+        android:id="@+id/etxt1"
+        android:layout_weight="10"
+        android:layout_width="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="描述..."/>
+     </linearLayout>
+
+</linearLayout>
