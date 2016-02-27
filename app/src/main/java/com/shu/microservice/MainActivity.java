@@ -154,9 +154,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initIcons() {
         Typeface iconfont = Typeface.createFromAsset(getAssets(), "iconfonts/iconfont.ttf");
         Typeface appIcons = Typeface.createFromAsset(getAssets(), "iconfonts/app_icon.ttf");
-
+        Typeface ques_iconfont = Typeface.createFromAsset(getAssets(), "iconfonts/ques_iconfont.ttf");
         homeIcon.setTypeface(iconfont);
-        questionIcon.setTypeface(iconfont);
+        questionIcon.setTypeface(ques_iconfont);
         serviceIcon.setTypeface(iconfont);
         requireIcon.setTypeface(iconfont);
         myIcon.setTypeface(iconfont);

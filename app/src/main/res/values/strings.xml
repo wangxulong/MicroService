@@ -2,19 +2,40 @@
     <string name="app_name">MicroService</string>
     <string name="icon_app">&#xe606;</string>
     <string name="icon_home">&#xe620;</string>
-    <string name="icon_question">&#xe692;</string>
+    <string name="icon_question">&#xe648;</string>
     <string name="icon_service">&#xe60e;</string>
     <string name="icon_require">&#xe612;</string>
     <string name="icon_my">&#xe6b6;</string>
     <string name="icon_search">&#xe612;</string>
     <string name="icon_clear">&#xe64d;</string>
+    <!--questionIcon-->
+    <string name="icon_back">&#xe614;</string>
+    <string name="icon_close">&#xe616;</string>
+    <string name="icon_collected">&#xe627;</string>
+    <string name="icon_uncollect">&#xe617;</string>
+    <string name="icon_praise">&#xe648;</string>
+    <string name="icon_unpraise">&#xe60b;</string>
+
+    <!--interactIcon-->
+    <string name="icon_comment">&#xe625;</string>
+    <string name="icon_telephone">&#xe64e;</string>
+    <string name="icon_qq">&#xe60b;</string>
+    <string name="weixin">&#xe63b;</string>
 
 
     <string name="hot_service">热点服务</string>
+    <string name="hot_require">热点需求</string>
+    <string name="hot_question">热门问答</string>
+    <string name="later_update">最近更新</string>
 
 
 
+    <!-- 个人信息方面-->
+    <string name="zhanghao">15201895065</string>
+    <string name="nick_name">Yage</string>
+    <string name="my_name">李昌亚</string>
+    <string name="my_email">1749362086@qq.com</string>
+    <string name="my_phone">13156525583</string>
 
-    <string name="zhanghao">账号：15201895065</string>
-    <string name="nick_name">昵称：Yage</string>
+
 </resources>

@@ -1,7 +1,5 @@
 package com.shu.microservice.adapter;
 
-import android.content.Context;
-import android.util.TimeUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +9,9 @@ import android.widget.TextView;
 
 import com.shu.microservice.R;
 import com.shu.microservice.model.ServiceItem;
-import com.shu.microservice.util.ImageLoader;
+import com.shu.microservice.util.AppContext;
+import com.shu.microservice.util.AppImageLoader;
+import com.shu.microservice.util.MImageLoader;
 import com.shu.microservice.util.TimeFormatUtil;
 
 import java.util.List;
@@ -23,9 +23,9 @@ public class ServiceAdapter extends BaseAdapter {
     private LayoutInflater layoutInflater;
     //数据源
     private List<ServiceItem> items;
-    public ServiceAdapter(Context context,List<ServiceItem> items) {
+    public ServiceAdapter(List<ServiceItem> items) {
         this.items = items;
-        layoutInflater = LayoutInflater.from(context);
+        layoutInflater = LayoutInflater.from(AppContext.getAppContext());
     }
     @Override
     public int getCount() {
@@ -58,10 +58,11 @@ public class ServiceAdapter extends BaseAdapter {
         }
         ServiceItem currentItem = items.get(position);
         String imageUrl = currentItem.getPicUrl();
-        viewHolder.pic.setImageResource(R.mipmap.ic_launcher);
+        //viewHolder.pic.setImageResource(R.mipmap.ic_launcher);
         viewHolder.pic.setTag(imageUrl);
-        // new ImageLoader().showImageByThread(viewHolder.image,imageUrl);
-        new ImageLoader().showImageByTask(viewHolder.pic,imageUrl);
+//         new MImageLoader().showImageByThread(viewHolder.pic, imageUrl);
+//        new MImageLoader().showImageByTask(viewHolder.pic,imageUrl);
+        new AppImageLoader(viewHolder.pic,imageUrl).loadImage();;
         viewHolder.title.setText(currentItem.getTitle());
         viewHolder.author.setText(currentItem.getAuthor());
         viewHolder.createTime.setText(TimeFormatUtil.getFormatStr(null,currentItem.getCreateTime()));

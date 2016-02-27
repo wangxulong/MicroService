@@ -18,11 +18,11 @@ import java.net.URLConnection;
 /**
  * Created by wxl on 2016/2/16.
  */
-public class ImageLoader {
+public class MImageLoader {
     private ImageView imageView;
     private String url;
     private LruCache<String, Bitmap> cache;
-    public ImageLoader() {
+    public MImageLoader() {
         int maxMemory = (int) Runtime.getRuntime().maxMemory();
         int mCacheSize = maxMemory / 8;
         //给LruCache分配1/8 4M

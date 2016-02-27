@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/colorWhite"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@color/colorWhite"
+        >
+
+        <TextView
+            android:id="@+id/question_detail_back"
+            android:layout_marginLeft="5dp"
+            android:layout_width="40dp"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorMain"
+            android:text="@string/icon_back"
+            />
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorHint"
+        >
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+           <TextView
+               android:id="@+id/question_detail_title"
+               android:layout_width="wrap_content"
+               android:layout_height="30dp"
+               android:textSize="20dp"
+               android:gravity="center"
+               android:layout_marginLeft="10dp"
+               android:textColor="@color/colorBlack"
+               android:text="李昌亚"
+               android:layout_alignParentLeft="true"
+               />
+
+           <TextView
+               android:id="@+id/question_detail_content"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp"
+               android:textSize="16dp"
+               android:gravity="left"
+               android:layout_marginLeft="20dp"
+               android:layout_marginRight="20dp"
+               android:textColor="@color/colorBlack"
+               android:text="李昌亚李昌亚李昌亚李昌亚李昌亚李昌亚李昌亚李昌亚李昌亚李昌亚李昌亚李昌亚"
+               android:layout_below="@id/question_detail_title"
+               />
+           <TextView
+               android:id="@+id/question_detail_date"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="16dp"
+               android:gravity="left"
+               android:layout_marginLeft="20dp"
+               android:layout_marginRight="20dp"
+               android:layout_marginTop="5dp"
+               android:layout_marginBottom="10dp"
+               android:textColor="@color/colorBlack"
+               android:text="2012-12-12 12:11"
+               android:layout_alignParentRight="true"
+               android:layout_below="@id/question_detail_content"
+               />
+           <TextView
+               android:id="@+id/question_detail_author"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="16dp"
+               android:gravity="left"
+               android:layout_marginLeft="20dp"
+               android:layout_marginRight="20dp"
+               android:layout_marginTop="5dp"
+               android:layout_marginBottom="10dp"
+               android:textColor="@color/colorBlack"
+               android:text="王徐龙"
+               android:layout_alignParentLeft="true"
+               android:layout_below="@id/question_detail_content"
+               />
+           <TextView
+               android:id="@+id/icon_comment"
+               android:layout_width="60dp"
+               android:layout_height="30dp"
+               android:layout_below="@id/question_detail_date"
+               android:textColor="@color/colorMain"
+               android:layout_alignParentRight="true"
+               android:layout_marginRight="10dp"
+               android:textSize="28dp"
+               android:text="@string/icon_comment"
+               />
+       </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>
