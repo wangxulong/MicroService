@@ -8,6 +8,19 @@
     <string name="icon_my">&#xe6b6;</string>
     <string name="icon_search">&#xe612;</string>
     <string name="icon_clear">&#xe64d;</string>
+    <!--questionIcon-->
+    <string name="icon_back">&#xe614;</string>
+    <string name="icon_close">&#xe616;</string>
+    <string name="icon_collected">&#xe627;</string>
+    <string name="icon_uncollect">&#xe617;</string>
+    <string name="icon_praise">&#xe648;</string>
+    <string name="icon_unpraise">&#xe60b;</string>
+
+    <!--interactIcon-->
+    <string name="icon_comment">&#xe625;</string>
+    <string name="icon_telephone">&#xe64e;</string>
+    <string name="icon_qq">&#xe60b;</string>
+    <string name="weixin">&#xe63b;</string>
 
 
     <string name="hot_service">热点服务</string>
@@ -23,4 +36,6 @@
     <string name="my_name">李昌亚</string>
     <string name="my_email">1749362086@qq.com</string>
     <string name="my_phone">13156525583</string>
+
+
 </resources>
