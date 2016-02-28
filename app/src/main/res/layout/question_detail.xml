@@ -55,7 +55,7 @@
                android:layout_marginLeft="20dp"
                android:layout_marginRight="20dp"
                android:textColor="@color/colorBlack"
-               android:text="李昌亚李昌亚李昌亚李昌亚李昌亚李昌亚李昌亚李昌亚李昌亚李昌亚李昌亚李昌亚"
+               android:text="加载中 "
                android:layout_below="@id/question_detail_title"
                />
            <TextView
@@ -102,4 +102,26 @@
        </RelativeLayout>
 
     </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:gravity="left|center_vertical"
+        android:textSize="18sp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/colorMain"
+        android:text="@string/answer" />
+    <ListView
+        android:id="@+id/question_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ListView>
+    <TextView
+        android:id="@+id/question_no_comment"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/question_detail_content"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textSize="30dp"
+        android:textColor="@color/colorMain"
+        android:text="暂无回复" />
 </LinearLayout>
