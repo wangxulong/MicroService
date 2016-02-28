@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:background="@color/colorHint"
+    android:layout_height="80dp">
+
+    <TextView
+
+        android:layout_marginLeft="5dp"
+        android:id="@+id/question_comment_author"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="30dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorSmallFont"
+        android:text="dddd"
+        />
+
+    <TextView
+        android:layout_marginLeft="5dp"
+        android:id="@+id/question_comment_content"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@color/colorBlack"
+        android:layout_below="@id/question_comment_author"
+        android:text="作者dddd"
+        />
+    <TextView
+        android:id="@+id/question_comment_createTime"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorSmallFont"
+        android:gravity="center"
+        android:layout_below="@id/question_comment_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:text="2016-10-10 22:12"
+        />
+</RelativeLayout>
