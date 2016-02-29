@@ -57,7 +57,7 @@ public class QuestionAdapter extends BaseAdapter {
         QuestionItem currentItem = items.get(position);
         viewHolder.title.setText(currentItem.getTitle());
         viewHolder.author.setText(currentItem.getAuthor());
-        viewHolder.createTime.setText(TimeFormatUtil.getFormatStr(null, currentItem.getCreateTime()));
+        viewHolder.createTime.setText( currentItem.getCreateTime());
         return convertView;
     }
     class ViewHolder{

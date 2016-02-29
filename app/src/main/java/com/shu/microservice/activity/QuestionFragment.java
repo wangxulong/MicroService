@@ -119,7 +119,7 @@ public class QuestionFragment extends Fragment {
                                     item.setId(result.getLong("id"));
                                     item.setAuthor(result.getString("userName"));
                                     item.setTitle(result.getString("title"));
-                                    item.setCreateTime(new Date(result.getLong("createTime")));
+                                    item.setCreateTime(result.getString("createTime"));
                                     hotQuestionItems.add(item);
                                 }
                                 adapter = new QuestionAdapter(hotQuestionItems);
@@ -166,7 +166,7 @@ public class QuestionFragment extends Fragment {
                                     item.setId(result.getLong("id"));
                                     item.setAuthor(result.getString("userName"));
                                     item.setTitle(result.getString("title"));
-                                    item.setCreateTime(new Date(result.getLong("createTime")));
+                                    item.setCreateTime(result.getString("createTime"));
                                     laterUpdateItems.add(item);
                                 }
                                 adapter = new QuestionAdapter(laterUpdateItems);

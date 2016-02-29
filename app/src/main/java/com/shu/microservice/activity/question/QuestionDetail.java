@@ -121,7 +121,7 @@ public class QuestionDetail extends AppCompatActivity {
                                         questionTitle.setText(result.getString("title"));
                                         questionAuthor.setText(result.getString("userName"));
                                         questionContent.setText(result.getString("description"));
-                                        questionCreateDate.setText(TimeFormatUtil.getFormatStr(null, new Date(result.getLong("createTime"))));
+                                        questionCreateDate.setText(result.getString("createTime"));
                                     }
                                 }
                             } catch (JSONException e) {
@@ -169,7 +169,7 @@ public class QuestionDetail extends AppCompatActivity {
                                         item.setId(result.getLong("id"));
                                         item.setUserName(result.getString("userName"));
                                         item.setContent(result.getString("content"));
-                                        item.setCreateTime(new Date(result.getLong("createTime")));
+                                        item.setCreateTime(result.getString("createTime"));
                                         commentItems.add(item);
                                     }
                                     commentAdapter = new QuestionCommentAdapter(commentItems);

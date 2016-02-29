@@ -9,7 +9,7 @@ public class CommentItem {
     private Long id;
     private String userName;
     private String content;
-    private Date  createTime;
+    private String  createTime;
     private Byte degree;
 
     public Long getId() {
@@ -30,11 +30,11 @@ public class CommentItem {
         this.content = content;
     }
 
-    public Date getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 
