@@ -38,12 +38,14 @@ public class MyFragment extends Fragment {
     RelativeLayout layout_Review = null;
     RelativeLayout layout_Question = null;
     RelativeLayout layout_Setting = null;
-    private static Boolean userStatus = false;
-    private SharedPreferences SharedPreferences;
+    RelativeLayout logout_view = null;
+    RelativeLayout login_view = null;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.my,container,false);
+
 
         return view;
     }
@@ -57,15 +59,13 @@ public class MyFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
+        if(LoginUtil.isLogin()){
 
-        Context ctx = getActivity();
-        SharedPreferences = ctx.getSharedPreferences("MyInfo", getActivity().MODE_PRIVATE);
-        String name = SharedPreferences.getString("name","");
-        Log.i("tages-->", name);
-        if(!name.equals("")){
-            userStatus = true;
+            logout_view = (RelativeLayout) getActivity().findViewById(R.id.logout);
+            logout_view.setVisibility(View.GONE);
+            login_view = (RelativeLayout) getActivity().findViewById(R.id.login);
+            login_view.setVisibility(View.VISIBLE);
         }
-
         //响应 我的需求
         layout_Request = (RelativeLayout) getActivity().findViewById(R.id.my_request);
         layout_Request.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +79,6 @@ public class MyFragment extends Fragment {
                     MainActivity parentActivity = (MainActivity ) getActivity();
                     parentActivity.showDialog_Layout(getContext());
                 }
-
             }
         });
         //响应 我的服务
@@ -87,10 +86,15 @@ public class MyFragment extends Fragment {
         layout_Server.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity ma = (MainActivity) getActivity();
-                ma.showDialog_Layout(getContext());
-//                Intent intent = new Intent(getActivity(), MyServerActivity.class);
-//                startActivity(intent);
+                if (LoginUtil.isLogin()) {
+                    Intent intent = new Intent(getActivity(), MyServerActivity.class);
+                    startActivity(intent);
+                } else {
+                    MainActivity parentActivity = (MainActivity) getActivity();
+                    parentActivity.showDialog_Layout(getContext());
+                }
+
+
             }
         });
         //响应 我的评论
@@ -98,8 +102,13 @@ public class MyFragment extends Fragment {
         layout_Review.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MyReviewActivity.class);
-                startActivity(intent);
+                if (LoginUtil.isLogin()){
+                    Intent intent = new Intent(getActivity(), MyReviewActivity.class);
+                    startActivity(intent);
+                }else{
+                    MainActivity parentActivity = (MainActivity ) getActivity();
+                    parentActivity.showDialog_Layout(getContext());
+                }
             }
         });
         //响应 我的问答
@@ -107,8 +116,13 @@ public class MyFragment extends Fragment {
         layout_Question.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MyQuestionActivity.class);
-                startActivity(intent);
+                if (LoginUtil.isLogin()){
+                    Intent intent = new Intent(getActivity(), MyQuestionActivity.class);
+                    startActivity(intent);
+                }else{
+                    MainActivity parentActivity = (MainActivity ) getActivity();
+                    parentActivity.showDialog_Layout(getContext());
+                }
             }
         });
 
@@ -117,8 +131,13 @@ public class MyFragment extends Fragment {
         layout_Setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MySettingActivity.class);
-                startActivity(intent);
+                if (LoginUtil.isLogin()) {
+                    Intent intent = new Intent(getActivity(), MySettingActivity.class);
+                    startActivity(intent);
+                }else{
+                        MainActivity parentActivity = (MainActivity ) getActivity();
+                        parentActivity.showDialog_Layout(getContext());
+                }
             }
         });
     }
