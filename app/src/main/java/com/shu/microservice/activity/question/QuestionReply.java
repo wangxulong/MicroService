@@ -20,6 +20,7 @@ import com.shu.microservice.R;
 import com.shu.microservice.adapter.QuestionCommentAdapter;
 import com.shu.microservice.model.CommentItem;
 import com.shu.microservice.util.AppContext;
+import com.shu.microservice.util.LoginUtil;
 import com.shu.microservice.util.NetUtil;
 import com.shu.microservice.util.NormalPostRequest;
 import com.shu.microservice.util.TimeFormatUtil;
@@ -39,7 +40,7 @@ import java.util.Map;
  * Created by wxl on 2016/2/25.
  */
 public class QuestionReply extends AppCompatActivity {
-    private static final String replyURL="";
+    private static final String replyURL="http://115.159.104.74:8080/micro_admin/ajax/question/reply";
     private EditText replyContent;
     private Button replyButton;
     private TextView replyBackIcon;
@@ -81,14 +82,12 @@ public class QuestionReply extends AppCompatActivity {
                 if (TextUtils.isEmpty(content)) {
                     ToastUtil.showLong("请输入回复的内容");
                 } else {
+
                     //添加回复
-                   // addReply();
-                    ToastUtil.showLong("回复内容"+content);
                     replyContentStr = content;
-                    //返回到问题详情页面
-                    Intent intent = new Intent(AppContext.getAppContext(), QuestionDetail.class);
-                    intent.putExtra("id", questionId);
-                    startActivity(intent);
+                    addReply();
+                    ToastUtil.showLong("回复内容" + content);
+                    finish();
 
                 }
             }
@@ -102,13 +101,14 @@ public class QuestionReply extends AppCompatActivity {
     }
     //添加回复
     private void addReply(){
+
         //1.获取当前用户的ID 2.发送请求接口(用户id 问答id 评论内容)
         if(!NetUtil.isConnected(AppContext.getAppContext())){
             ToastUtil.showLong("网络连接失败");
             return;
         }
         Map<String,String> map = new HashMap<>();
-        map.put("id","7");
+        map.put("userId",LoginUtil.getLoginUser().toString());
         map.put("contentId",questionId+"");
         map.put("content",replyContentStr);
         JSONObject params = new JSONObject(map);
@@ -123,7 +123,10 @@ public class QuestionReply extends AppCompatActivity {
                         try {
                             if(response.getString("status").equals("success")){
                                  ToastUtil.showLong("添加成功");
-
+                                //返回到问题详情页面
+                                Intent intent = new Intent(AppContext.getAppContext(), QuestionDetail.class);
+                                intent.putExtra("id", questionId);
+                                startActivity(intent);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

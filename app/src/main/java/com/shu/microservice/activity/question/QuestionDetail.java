@@ -21,6 +21,7 @@ import com.shu.microservice.adapter.QuestionCommentAdapter;
 import com.shu.microservice.model.CommentItem;
 import com.shu.microservice.model.QuestionItem;
 import com.shu.microservice.util.AppContext;
+import com.shu.microservice.util.LoginUtil;
 import com.shu.microservice.util.NetUtil;
 import com.shu.microservice.util.NormalPostRequest;
 import com.shu.microservice.util.TimeFormatUtil;
@@ -89,6 +90,10 @@ public class QuestionDetail extends AppCompatActivity {
         questionReply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(!LoginUtil.isLogin()){
+                    ToastUtil.showLong("用户没有登陆");
+                    return;
+                }
                 Intent intent = new Intent(AppContext.getAppContext(),QuestionReply.class);
                 intent.putExtra("questionId",currentQuestionId);
                 startActivity(intent);
@@ -208,5 +213,11 @@ public class QuestionDetail extends AppCompatActivity {
         request.setTag("question-comment-" + currentQuestionId);
         // 3 将JsonObjectRequest添加到RequestQueue
         mRequestQueue.add(request);
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        initViews();
     }
 }
