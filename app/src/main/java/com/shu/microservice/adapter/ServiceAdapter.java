@@ -65,7 +65,7 @@ public class ServiceAdapter extends BaseAdapter {
         new AppImageLoader(viewHolder.pic,imageUrl).loadImage();;
         viewHolder.title.setText(currentItem.getTitle());
         viewHolder.author.setText(currentItem.getAuthor());
-        viewHolder.createTime.setText(TimeFormatUtil.getFormatStr(null,currentItem.getCreateTime()));
+        viewHolder.createTime.setText(currentItem.getCreateTime());
         return convertView;
     }
 

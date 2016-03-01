@@ -7,12 +7,16 @@ import java.util.Date;
  * Created by wxl on 2016/2/24.
  */
 public class ServiceItem {
+    private Long id;
     private String picUrl;
     private String title;
     private String author;
-    private Date createTime;
+    private String createTime;
 
-    public ServiceItem(String picUrl, String title, String author, Date createTime) {
+    public ServiceItem() {
+    }
+
+    public ServiceItem(String picUrl, String title, String author, String createTime) {
         this.picUrl = picUrl;
         this.title = title;
         this.author = author;
@@ -43,11 +47,19 @@ public class ServiceItem {
         this.author = author;
     }
 
-    public Date getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
