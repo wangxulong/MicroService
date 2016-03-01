@@ -57,7 +57,7 @@ public class QuestionCommentAdapter extends BaseAdapter {
         CommentItem currentItem = items.get(position);
         viewHolder.content.setText(currentItem.getContent());
         viewHolder.author.setText(currentItem.getUserName());
-        viewHolder.createTime.setText(TimeFormatUtil.getFormatStr(null, currentItem.getCreateTime()));
+        viewHolder.createTime.setText( currentItem.getCreateTime());
         return convertView;
     }
     class ViewHolder{

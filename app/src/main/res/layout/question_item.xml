@@ -1,41 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<LinearLayout
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="80dp">
-
-    <TextView
-        android:layout_marginLeft="5dp"
-        android:id="@+id/question_title"
+    android:layout_height="80dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_height="50dp"
-        android:textSize="28sp"
-        android:textColor="@color/colorBlack"
-        android:text="dddd"
-        />
+        android:layout_height="80dp">
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:id="@+id/question_title"
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_height="50dp"
+            android:textSize="28sp"
+            android:textColor="@color/colorBlack"
+            android:text="dddd"
+            />
 
-    <TextView
-        android:layout_marginLeft="5dp"
-        android:id="@+id/question_author"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:gravity="center"
-        android:textSize="16sp"
-        android:textColor="@color/colorSmallFont"
-        android:layout_below="@id/question_title"
-        android:text="作者"
-        />
-    <TextView
-        android:id="@+id/question_createTime"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:textSize="16sp"
-        android:textColor="@color/colorSmallFont"
-        android:gravity="center"
-        android:layout_below="@id/question_title"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
-        android:text="2016-10-10 22:12"
-        />
-</RelativeLayout>
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:id="@+id/question_author"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="@color/colorSmallFont"
+            android:layout_below="@id/question_title"
+            android:text="作者"
+            />
+        <TextView
+            android:id="@+id/question_createTime"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textSize="16sp"
+            android:textColor="@color/colorSmallFont"
+            android:gravity="center"
+            android:layout_below="@id/question_title"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:text="2016-10-10 22:12"
+            />
+    </RelativeLayout>
+</LinearLayout>

@@ -10,7 +10,7 @@ public class QuestionItem {
     private String author;
     private String title;
     private String content;
-    private Date  createTime;
+    private String  createTime;
 
     public Long getId() {
         return id;
@@ -36,11 +36,12 @@ public class QuestionItem {
         this.content = content;
     }
 
-    public Date getCreateTime() {
+
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 

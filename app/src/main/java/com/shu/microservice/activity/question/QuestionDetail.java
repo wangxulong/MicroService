@@ -1,5 +1,6 @@
 package com.shu.microservice.activity.question;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -28,6 +29,7 @@ import com.shu.microservice.util.ToastUtil;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -57,7 +59,8 @@ public class QuestionDetail extends AppCompatActivity {
     private List<CommentItem> commentItems;
 
     private TextView noComment;
-
+    //回复按钮单击
+    private TextView questionReply;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +86,14 @@ public class QuestionDetail extends AppCompatActivity {
                 finish();
             }
         });
+        questionReply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AppContext.getAppContext(),QuestionReply.class);
+                intent.putExtra("questionId",currentQuestionId);
+                startActivity(intent);
+            }
+        });
     }
     private void initViews() {
         backIcon = (TextView) findViewById(R.id.question_detail_back);
@@ -92,6 +103,8 @@ public class QuestionDetail extends AppCompatActivity {
         questionContent = (TextView) findViewById(R.id.question_detail_content);
         questionCreateDate = (TextView) findViewById(R.id.question_detail_date);
         noComment = (TextView) findViewById(R.id.question_no_comment);
+        questionReply = (TextView) findViewById(R.id.icon_question_reply);
+
 
         questionComment = (ListView) findViewById(R.id.question_comment);
         getQuestion();
@@ -121,7 +134,7 @@ public class QuestionDetail extends AppCompatActivity {
                                         questionTitle.setText(result.getString("title"));
                                         questionAuthor.setText(result.getString("userName"));
                                         questionContent.setText(result.getString("description"));
-                                        questionCreateDate.setText(TimeFormatUtil.getFormatStr(null, new Date(result.getLong("createTime"))));
+                                        questionCreateDate.setText(result.getString("createTime"));
                                     }
                                 }
                             } catch (JSONException e) {
@@ -169,7 +182,7 @@ public class QuestionDetail extends AppCompatActivity {
                                         item.setId(result.getLong("id"));
                                         item.setUserName(result.getString("userName"));
                                         item.setContent(result.getString("content"));
-                                        item.setCreateTime(new Date(result.getLong("createTime")));
+                                        item.setCreateTime(result.getString("createTime"));
                                         commentItems.add(item);
                                     }
                                     commentAdapter = new QuestionCommentAdapter(commentItems);

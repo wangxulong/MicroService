@@ -11,7 +11,7 @@ public class TimeFormatUtil {
 
     public static  String getFormatStr(String format,Date date){
         if(null==format){
-            format = "yyyy-mm-dd HH:ss";
+            format = "yyyy-MM-dd hh:mm";
         }
         slf = new SimpleDateFormat(format);
         return slf.format(date);

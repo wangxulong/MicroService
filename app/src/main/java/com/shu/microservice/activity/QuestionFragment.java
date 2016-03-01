@@ -25,6 +25,7 @@ import com.shu.microservice.activity.question.QuestionDetail;
 import com.shu.microservice.adapter.QuestionAdapter;
 import com.shu.microservice.model.QuestionItem;
 import com.shu.microservice.util.AppContext;
+import com.shu.microservice.util.ListViewUtil;
 import com.shu.microservice.util.NetUtil;
 import com.shu.microservice.util.ToastUtil;
 import android.app.ProgressDialog;
@@ -42,6 +43,7 @@ import java.util.List;
  */
 public class QuestionFragment extends Fragment {
     public  static final String hotQuestionURL = "http://115.159.104.74:8080/micro_admin/ajax/hotQuestion";
+    public  static final String laterQuestionURL = "http://115.159.104.74:8080/micro_admin/ajax/laterQuestion";
     private ListView hotQuestion;
     private List<QuestionItem> hotQuestionItems;
     private QuestionAdapter adapter;
@@ -92,11 +94,6 @@ public class QuestionFragment extends Fragment {
         hotQuestion = (ListView) view.findViewById(R.id.question_hot);
         laterUpdateQuestion = (ListView) view.findViewById(R.id.question_later_update);
         initData();
-
-
-        adapter = new QuestionAdapter(laterUpdateItems);
-        laterUpdateQuestion.setAdapter(adapter);
-
     }
     private void getHotQuestion() {
         if(!NetUtil.isConnected(AppContext.getAppContext())){
@@ -122,11 +119,12 @@ public class QuestionFragment extends Fragment {
                                     item.setId(result.getLong("id"));
                                     item.setAuthor(result.getString("userName"));
                                     item.setTitle(result.getString("title"));
-                                    item.setCreateTime(new Date(result.getLong("createTime")));
+                                    item.setCreateTime(result.getString("createTime"));
                                     hotQuestionItems.add(item);
                                 }
                                 adapter = new QuestionAdapter(hotQuestionItems);
                                 hotQuestion.setAdapter(adapter);
+                                ListViewUtil.setListViewHeightBasedOnChildren(hotQuestion);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -144,23 +142,62 @@ public class QuestionFragment extends Fragment {
         // 3 将JsonObjectRequest添加到RequestQueue
         mRequestQueue.add(mJsonObjectRequest);
     }
+    private void getLaterQuestion() {
+        if(!NetUtil.isConnected(AppContext.getAppContext())){
+            ToastUtil.showLong("网络连接失败");
+            return;
+        }
+        // 1 创建RequestQueue对象
+        mRequestQueue = AppContext.getAppQueue();
+        // 2 创建JsonObjectRequest对象
+        mJsonObjectRequest = new JsonObjectRequest(laterQuestionURL, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        //
+                        try {
+                            if(response.getString("status").equals("success")){
+                                laterUpdateItems = new ArrayList<>();
+                                JSONArray results = response.getJSONArray("data");
+                                JSONObject result = null;
+                                for(int i=0;i<results.length();i++){
+                                    result = results.getJSONObject(i);
+                                    QuestionItem item = new QuestionItem();
+                                    item.setId(result.getLong("id"));
+                                    item.setAuthor(result.getString("userName"));
+                                    item.setTitle(result.getString("title"));
+                                    item.setCreateTime(result.getString("createTime"));
+                                    laterUpdateItems.add(item);
+                                }
+                                adapter = new QuestionAdapter(laterUpdateItems);
+                                laterUpdateQuestion.setAdapter(adapter);
+                                ListViewUtil.setListViewHeightBasedOnChildren(laterUpdateQuestion);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        System.out.println("请求结果:" + response.toString());
+                    }
+
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                System.out.println("请求错误:" + error.toString());
+            }
+        });
+        mJsonObjectRequest.setTag("laterUpdateQuestion");
+        // 3 将JsonObjectRequest添加到RequestQueue
+        mRequestQueue.add(mJsonObjectRequest);
+    }
     private void initData() {
         getHotQuestion();
-        laterUpdateItems = new ArrayList<>();
-        for(int i=0;i<10;i++){
-            QuestionItem item = new QuestionItem();
-            item.setId((long)i+100);
-            item.setAuthor("wxl" + i);
-            item.setTitle("最近更新" + i);
-            item.setCreateTime(new Date());
-            laterUpdateItems.add(item);
-        }
-
+        getLaterQuestion();
     }
 
     @Override
     public void onStop() {
         super.onStop();
         AppContext.getAppQueue().cancelAll("hotQuestion");
+        AppContext.getAppQueue().cancelAll("laterUpdateQuestion");
     }
 }
