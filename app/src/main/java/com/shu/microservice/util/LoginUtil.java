@@ -12,12 +12,16 @@ public class LoginUtil {
     public static boolean isLogin(){
         Context ctx = AppContext.getAppContext();
         SharedPreferences = ctx.getSharedPreferences("MyInfo", Context.MODE_PRIVATE);
-        Long id = SharedPreferences.getLong("id",0);
-        if(id==0) return false;
-        return true;
+        long userId = SharedPreferences.getLong("id",0);
+        if(userId==0) {
+            return false;
+        }else {
+            return true;
+        }
+
     }
 
-    public Long getLoginUser(){
+    public static Long getLoginUser(){
         Context ctx = AppContext.getAppContext();
         SharedPreferences = ctx.getSharedPreferences("MyInfo", Context.MODE_PRIVATE);
         Long id = SharedPreferences.getLong("id",0);
