@@ -1,15 +1,23 @@
 package com.shu.microservice.activity;
 
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.shu.microservice.MainActivity;
 import com.shu.microservice.R;
@@ -18,6 +26,7 @@ import com.shu.microservice.myActivity.MyRequestActivity;
 import com.shu.microservice.myActivity.MyReviewActivity;
 import com.shu.microservice.myActivity.MyServerActivity;
 import com.shu.microservice.myActivity.MySettingActivity;
+import com.shu.microservice.util.LoginUtil;
 
 /**
  * ‘我的’模块的Fragment
@@ -29,6 +38,8 @@ public class MyFragment extends Fragment {
     RelativeLayout layout_Review = null;
     RelativeLayout layout_Question = null;
     RelativeLayout layout_Setting = null;
+    private static Boolean userStatus = false;
+    private SharedPreferences SharedPreferences;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,17 +47,39 @@ public class MyFragment extends Fragment {
 
         return view;
     }
+    //读取本地缓存的用户信息
+    public void readMyInfomation(View view)
+    {
+
+    }
+
 
     @Override
     public void onStart() {
         super.onStart();
+
+        Context ctx = getActivity();
+        SharedPreferences = ctx.getSharedPreferences("MyInfo", getActivity().MODE_PRIVATE);
+        String name = SharedPreferences.getString("name","");
+        Log.i("tages-->", name);
+        if(!name.equals("")){
+            userStatus = true;
+        }
+
         //响应 我的需求
         layout_Request = (RelativeLayout) getActivity().findViewById(R.id.my_request);
         layout_Request.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MyRequestActivity.class);
-                startActivity(intent);
+                if(LoginUtil.isLogin()){
+                    Intent intent = new Intent(getActivity(), MyRequestActivity.class);
+                    startActivity(intent);
+                }else{
+                    MainActivity parentActivity = (MainActivity ) getActivity();
+                    parentActivity.showDialog_Layout(getContext());
+                }
+
             }
         });
         //响应 我的服务
@@ -54,8 +87,10 @@ public class MyFragment extends Fragment {
         layout_Server.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MyServerActivity.class);
-                startActivity(intent);
+                MainActivity ma = (MainActivity) getActivity();
+                ma.showDialog_Layout(getContext());
+//                Intent intent = new Intent(getActivity(), MyServerActivity.class);
+//                startActivity(intent);
             }
         });
         //响应 我的评论
@@ -87,4 +122,5 @@ public class MyFragment extends Fragment {
             }
         });
     }
+
 }
