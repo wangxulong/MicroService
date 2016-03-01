@@ -51,7 +51,7 @@
                             android:text="登录"
                             android:onClick="Login_Click"
                             android:textSize="21sp"
-                            android:textColor="#474af1"/>
+                            android:textColor="@color/colorBlue"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
                             android:layout_height="wrap_content"
                             android:text="注册"
                             android:textSize="21sp"
-                            android:textColor="#474af1"/>
+                            android:textColor="@color/colorBlue"/>
                     </LinearLayout>
 
             </RelativeLayout>

@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:text="我的需求"
-            android:textSize="30sp"
+            android:textSize="27sp"
             android:textColor="#000"
             />
     </RelativeLayout>

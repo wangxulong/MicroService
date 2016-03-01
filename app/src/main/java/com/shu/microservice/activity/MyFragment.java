@@ -49,12 +49,18 @@ public class MyFragment extends Fragment {
 
         return view;
     }
-    //读取本地缓存的用户信息
-    public void readMyInfomation(View view)
-    {
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(LoginUtil.isLogin()){
+
+            logout_view = (RelativeLayout) getActivity().findViewById(R.id.logout);
+            logout_view.setVisibility(View.GONE);
+            login_view = (RelativeLayout) getActivity().findViewById(R.id.login);
+            login_view.setVisibility(View.VISIBLE);
+        }
     }
-
 
     @Override
     public void onStart() {
