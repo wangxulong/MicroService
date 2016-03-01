@@ -97,7 +97,7 @@ public class QuestionDetail extends AppCompatActivity {
     }
     private void initViews() {
         backIcon = (TextView) findViewById(R.id.question_detail_back);
-        commentIcon = (TextView) findViewById(R.id.icon_comment);
+        commentIcon = (TextView) findViewById(R.id.icon_question_reply);
         questionTitle = (TextView) findViewById(R.id.question_detail_title);
         questionAuthor = (TextView) findViewById(R.id.question_detail_author);
         questionContent = (TextView) findViewById(R.id.question_detail_content);

@@ -42,7 +42,7 @@ public class QuestionReply extends AppCompatActivity {
     private static final String replyURL="";
     private EditText replyContent;
     private Button replyButton;
-    private TextView replyBack;
+    private TextView replyBackIcon;
 
     private RequestQueue mRequestQueue;
     private Request<JSONObject> mJsonObjectRequest;
@@ -60,11 +60,15 @@ public class QuestionReply extends AppCompatActivity {
         setContentView(R.layout.question_reply);
         questionId=  getIntent().getLongExtra("questionId", -1);
         initViews();
+        initIcons();
         intiEvents();
     }
-
+    private void initIcons() {
+        Typeface question = Typeface.createFromAsset(getAssets(), "iconfonts/question_icon.ttf");
+        replyBackIcon.setTypeface(question);
+    }
     private void intiEvents() {
-        replyBack.setOnClickListener(new View.OnClickListener() {
+        replyBackIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -94,7 +98,7 @@ public class QuestionReply extends AppCompatActivity {
     private void initViews() {
         replyContent = (EditText) findViewById(R.id.question_reply_content);
         replyButton = (Button) findViewById(R.id.question_reply_commit);
-        replyBack = (TextView) findViewById(R.id.question_reply_back);
+        replyBackIcon = (TextView) findViewById(R.id.question_reply_back);
     }
     //添加回复
     private void addReply(){
@@ -141,6 +145,6 @@ public class QuestionReply extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        mRequestQueue.cancelAll("question-reply" + questionId);
+        AppContext.getAppQueue().cancelAll("question-reply" + questionId);
     }
 }

@@ -10,65 +10,35 @@
 
         />
     <TextView
-        android:id="@+id/title1"
+        android:id="@+id/title"
         android:layout_toRightOf="@id/pic"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:textSize="28sp"
         android:textColor="@color/colorBlack"
-        android:text="快速,准确地翻译英文论文"
         />
 
     <TextView
-        android:layout_bellow="@id/title1"
-        android:id="@+id/author1"
+        android:layout_toRightOf="@id/pic"
+        android:id="@+id/author"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:gravity="center"
         android:textSize="16sp"
         android:textColor="@color/colorSmallFont"
-        android:text="本人是英语应用专业,专业八级已过..."
+        android:layout_below="@id/title"
+        android:text="作者"
         />
-    <LinearLayout
+    <TextView
+        android:id="@+id/createTime"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        android:orientation="horizontal" >
-        <TextView
-            android:id="@+id/createTime"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:textSize="16sp"
-            android:textColor="@color/colorSmallFont"
-            android:gravity="center"
-
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:text="2016-10-10 22:12"
-            />
-        <TextView
-            android:id="@+id/createTime1"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:textSize="16sp"
-            android:textColor="@color/colorSmallFont"
-            android:gravity="center"
-
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:text="2016-10-10 22:12"
-            />
-        <TextView
-            android:id="@+id/good"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:textSize="16sp"
-            android:textColor="@color/colorSmallFont"
-            android:gravity="center"
-            android:layout_below="@id/author1"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:text="2016-10-10 22:12"
-            />
-    </LinearLayout>
-
+        android:layout_height="30dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorSmallFont"
+        android:gravity="center"
+        android:layout_below="@id/title"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:text="2016-10-10 22:12"
+        />
 </RelativeLayout>

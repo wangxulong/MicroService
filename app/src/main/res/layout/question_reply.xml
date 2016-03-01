@@ -42,6 +42,7 @@
         android:maxLines="8"
         android:scrollbars="vertical"
         android:gravity="top"
+        android:textColor="@color/colorBlack"
         android:textColorHint="@color/colorHint"
         android:hint="请输入要回复的内容"
         />
